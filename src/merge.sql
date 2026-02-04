@@ -1,12 +1,12 @@
 use master1;
 
-select* from Employees;
 alter table employees drop column salary;
 
 select* from products;
 
 MERGE Employees AS T
 USING products as s
+select* from Employees;
 ON T.empid = s.ID
 
 WHEN MATCHED THEN
@@ -18,3 +18,6 @@ VALUES (S.ID, S.Name)
 
 WHEN NOT MATCHED BY SOURCE THEN
 DELETE;
+
+
+select 10%7;
